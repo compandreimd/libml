@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="libml",
-    version="0.0.1",
+    version="0.0.2",
     author="compandreimd",
     author_email="compandreimd@gmail.com",
     url="https://github.com/compandreimd/libml",

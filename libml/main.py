@@ -1,7 +1,7 @@
 import requests as rq
 from tqdm import tqdm
 
-def main(url = "https://drive.usercontent.google.com/download?id=1-DBKQE781Srff7_mjManONfDNU2_UplL&export=download&confirm=t&uuid=c69f5bc5-2fdf-418d-b421-6f9eb333ba9c&at=APZUnTVIhFUteDEZnPOH5dCRMBdH%3A1708075075180"):
+def main(url = "https://drive.usercontent.google.com/download?id=1-DBKQE781Srff7_mjManONfDNU2_UplL&export=download&confirm=t&uuid=c69f5bc5-2fdf-418d-b421-6f9eb333ba9c&at=APZUnTVIhFUteDEZnPOH5dCRMBdH%3A1708075075180", name="DeepForest_Model"):
     resp = rq.get(url, stream=True)
 
     # Check if the request was successful
@@ -11,7 +11,7 @@ def main(url = "https://drive.usercontent.google.com/download?id=1-DBKQE781Srff7
         # Initialize the progress bar with the total file size
         progress = tqdm(total=file_size, unit='B', unit_scale=True)
 
-        with open("DeepForest_Model", "wb") as file:
+        with open(name, "wb") as file:
             for chunk in resp.iter_content(chunk_size=1024):
                 # Write each chunk of data to the file
                 file.write(chunk)
